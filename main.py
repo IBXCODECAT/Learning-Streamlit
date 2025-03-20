@@ -1,11 +1,14 @@
 import streamlit as st
 import os
 
-st.title("My Streamlit App")
+st.title("Exploring Streamlit")
+st.divider()
+st.button("Show README", on_click=lambda: show_readme())
 
-if(os.path.exists("README.md")):
-    f = open("README.md", "r")
-    content = f.read()
-    st.markdown(content)
-else:
-    st.error("README.md file not found.")
+def show_readme():
+    try:
+        with open("README.md", "r") as f:
+            content = f.read()
+        st.markdown(content)
+    except FileNotFoundError:
+        st.exception(FileNotFoundError("README.md file not found."))
