@@ -1,14 +1,16 @@
 import streamlit as st
-import os
+import Utility.API as API
 
-st.title("Exploring Streamlit")
-st.divider()
-st.button("Show README", on_click=lambda: show_readme())
+st.set_page_config(
+    page_title="Aviation Weather App",
+    page_icon="✈️"
+)
 
-def show_readme():
-    try:
-        with open("README.md", "r") as f:
-            content = f.read()
-        st.markdown(content)
-    except FileNotFoundError:
-        st.exception(FileNotFoundError("README.md file not found."))
+airport_code = st.text_input("Enter airport code", "KMKE")
+st.button("Get Weather!")
+
+st.button("Get METAR", on_click=lambda: call_api)
+
+def call_api():
+    API.get_metar(airport_code)
+    API.get_taf(airport_code)
