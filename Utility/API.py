@@ -9,7 +9,6 @@ from Model.METAR import MetarReport
 from Model.TAF import TafReport
 
 # Constants for the browser session state keys
-SESSION_STATE_AIRPORT_ID = "airport_code"
 SESSION_STATE_METAR_KEY = "metar_data"
 SESSION_STATE_TAF_KEY = "taf_data"
 
