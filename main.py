@@ -7,10 +7,9 @@ st.set_page_config(
 )
 
 airport_code = st.text_input("Enter airport code", "KMKE")
-st.button("Get Weather!")
+st.button("Get Weather!", on_click=lambda: call_api())
 
-st.button("Get METAR", on_click=lambda: call_api)
-
+# Call the API to get the METAR and TAF data for the specified airport code
 def call_api():
     API.get_metar(airport_code)
     API.get_taf(airport_code)
