@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
-import Utility.API as API
+import utility.api as api
 
-metar = API.get_metar_from_session()
-taf = API.get_taf_from_session()
+metar = api.get_metar_from_session()
+taf = api.get_taf_from_session()
 
 st.header(metar.name)
 

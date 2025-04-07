@@ -1,5 +1,5 @@
 import streamlit as st
-import Utility.API as API
+import utility.api as api
 
 st.set_page_config(
     page_title="Aviation Weather App",
@@ -11,5 +11,5 @@ st.button("Get Weather!", on_click=lambda: call_api())
 
 # Call the API to get the METAR and TAF data for the specified airport code
 def call_api():
-    API.get_metar(airport_code)
-    API.get_taf(airport_code)
+    api.get_metar(airport_code)
+    api.get_taf(airport_code)
