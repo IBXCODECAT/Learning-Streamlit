@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import Utility.API as API
+import utility.api as API
 
 metar = API.get_metar_from_session()
 taf = API.get_taf_from_session()

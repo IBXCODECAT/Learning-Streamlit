@@ -5,8 +5,8 @@ import json
 import streamlit as st
 
 # Importing the MetarReport and TafReport classes from the Model package
-from Model.METAR import MetarReport
-from Model.TAF import TafReport
+from model.METAR import MetarReport
+from model.TAF import TafReport
 
 # Constants for the browser session state keys
 SESSION_STATE_METAR_KEY = "metar_data"
