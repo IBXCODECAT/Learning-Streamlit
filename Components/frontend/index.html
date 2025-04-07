@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+  <div>
+    <h3>Custom Component</h3>
+    <label for="nameInput">Enter name:</label>
+    <input type="text" id="nameInput" />
+    <button onclick="sendData()">Send</button>
+  </div>
+
+  <script>
+    function sendData() {
+      const name = document.getElementById("nameInput").value || "World";
+      const greeting = `Hello, ${name}!`;
+      Streamlit.setComponentValue(greeting);
+    }
+
+    // Let Streamlit know we are ready
+    window.addEventListener("load", () => Streamlit.setComponentReady());
+  </script>
+</body>
+</html>
